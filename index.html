@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>p5.js example</title>
+  <script src="libraries/p5.js"></script>
+  <script src="sketch.js"></script>
+  <link rel="stylesheet" href="libraries/grapick.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script src="libraries/grapick.min.js"></script>
+</head>
+
+<body>
+  <h1>Prime Number Art Generator</h1>
+  <h3>Enter numbers into the following fields to customize the output of the art.</h3>
+  <div class="inputSection">
+    <label for="cellSize">Cell Size:</label>
+    <input type="number" id="cellSize" name="cellSize" value=60>
+  </div>
+  
+  <div class="inputSection">
+    <label for="padding">Padding:</label>
+    <input type="number" id="padding" name="padding" value=35>
+    <label for="spacing">Spacing:</label>
+    <input type="number" id="spacing" name="spacing" value=10>
+  
+  </div>
+
+  <div class="inputSection">
+    <label for="rows">Rows:</label>
+    <input type="number" id="rows" name="rows" value=15>
+    <label for="cols">Columns:</label>
+    <input type="number" id="cols" name="cols" value=15>
+    
+  </div>
+  
+  <div class="inputSection">
+    <label for="dif">Prime Size Difference:</label>
+    <input type="number" id="dif" name="dif" value=10>
+  </div>
+  
+  <div class="inputSection">
+    <label for="one">Color for 1 (neither prime nor composite):</label>
+    <input type="color" id="one" name="one" value="#000000">
+    <label for="bg">Background color:</label>
+    <input type="color" id="bg" name="bg" value="#ffffff">
+  </div>
+
+  <div class="inputSection">
+    <label for="gp">Gradient from smallest to largest prime:</label>
+    <div id="gp"></div>
+  </div>
+  
+
+  <input type="button" onclick="renderWithSpacing()" value = "Generate" id="generate">
+  <div id="frame"></div>
+  
+  <button id="downloadButton" style="visibility: hidden;" onclick="saveCanvas('Prime Art', 'png');">Download</button>
+
+  <div id="explanation">
+    <h4>Further Explanation:</h4>
+    <p>Each prime number has a unique color depending on its size and the created gradient.<br>The color of the composite numbers are the same as the largest prime in their prime factorization.</p>
+  </div>
+  
+
+</body>
+
+</html>
