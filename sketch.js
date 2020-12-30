@@ -41,6 +41,11 @@ function renderWithSpacing (){
 
   document.getElementById("downloadButton").style.visibility = "visible";
   document.getElementById("downloadButton").innerHTML = "Download as png ("+width + "x" + height +")";
+  let frame = document.getElementById("frame");
+  frame.style.visibility = "visible";
+  frame.style.width = width +"px";
+  frame.style.height = height +"px";
+
   generateGradient(gp.getColorValue());
   generatePrimes();
   largestPrime = primes[primes.length-1];

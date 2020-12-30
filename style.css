@@ -26,11 +26,14 @@ input{
 }
 
 #frame{
-  width: min-content;
+  width: 0px;
+  height: 0px;
   border-style: solid;
   border-width: 2px;
   border-color: black;
   margin: 14px 60px;
+  padding: 0px;
+  visibility: hidden;
 }
 
 #generate{
