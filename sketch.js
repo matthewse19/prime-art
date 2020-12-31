@@ -1,6 +1,3 @@
-//specify cell size, padding, spacing, rows, and columns
-//or specify width, height, padding, rows, columns, cell size
-//width & height vs spacing
 var cellSize = 60;
 var width = 300;
 var height = 200;
@@ -16,7 +13,7 @@ var oneColor;
 var gp;
 var gradient = []
 function setup() {
-  gp = new Grapick({el: '#gp', width: '100px'});
+  gp = new Grapick({el: '#gp', width: 'max-width', height: '50px'});
   gp.addHandler(0, '#E5FFFF');
   gp.addHandler(25, '#3E86E5')
   gp.addHandler(100, '#2D00A8');
@@ -36,6 +33,7 @@ function renderWithSpacing (){
   oneColor = color(document.getElementById("one").value);
   let largeColor = color(0);//color(document.getElementById("bigPrime").value);
   
+  spacing -= sizeDif/2;
   width = 2 * padding + columns * cellSize + (columns - 1) * spacing;
   height = 2 * padding + rows * cellSize + (rows - 1) * spacing;
 
@@ -57,9 +55,9 @@ function renderWithSpacing (){
   for(var r = 0; r < rows; r ++){
     for(var c = 0; c < columns; c ++){
       let num = 1 + c + columns * r;
-      let addWidth = -sizeDif;
+      let addWidth = -sizeDif/2;
       if(isPrime(num)){
-        addWidth = sizeDif;
+        addWidth = sizeDif/2;
         let newColor;
         if(num <= largestPrime){
           newColor = lerpColors(num / largestPrime);
